@@ -1,0 +1,50 @@
+name: 'Semantic stack.yaml'
+
+# Run the workflow...
+on:
+  # ...on all PRs to master.
+  pull_request:
+    branches:
+      - 'master'
+  # ...on all pushes directly to master.
+  push:
+    branches:
+      - 'master'
+  # ...every day at midnight.
+  schedule:
+      - cron: '0 0 * * *'
+
+jobs:
+  # Validate stack.yaml files against the semantic (master)
+  validate:
+    name: 'Stackage LTS ${{ matrix.lts }}'
+    runs-on: 'ubuntu-latest'
+    strategy:
+      matrix:
+        ghc: ['8.8.1']
+        include:
+          - ghc: '8.8.1'
+            lts: '15'
+
+    steps:
+      - name: 'Checkout this project'
+        uses: 'actions/checkout@v2'
+
+      - name: 'Checkout semantic'
+        uses: 'actions/checkout@v2'
+        with:
+          repository: 'github/semantic'
+          path: 'semantic'
+
+      - name: 'Validate stack.yaml'
+        uses: 'actions/setup-haskell@v1.1'
+        with:
+          enable-stack: true
+          stack-version: 'latest'
+
+      # Valid! (or perhaps not...)
+      - run: | 
+          cp stack-lts-${{ matrix.lts }}.yaml semantic/stack.yaml
+          cd semantic
+          stack build --dry-run --system-ghc
+
