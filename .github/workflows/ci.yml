@@ -36,15 +36,17 @@ jobs:
           repository: 'github/semantic'
           path: 'semantic'
 
-      - name: 'Validate stack.yaml'
+      - name: 'Setup Haskell environment'
         uses: 'actions/setup-haskell@v1.1'
         with:
           enable-stack: true
+          ghc-version: ${{ matrix.ghc }}
           stack-version: 'latest'
 
       # Valid! (or perhaps not...)
-      - run: | 
+      - name: 'Validate stack.yaml'
+        run: | 
           cp stack-lts-${{ matrix.lts }}.yaml semantic/stack.yaml
           cd semantic
-          stack build --dry-run --system-ghc
+          stack build --dry-run --system-ghc --compiler="ghc-${{ matrix.ghc }}"
 
