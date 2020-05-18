@@ -1,6 +1,6 @@
 # (Unofficial) `stack.yaml` Configuration for [`semantic`]
 
-![Semantic stack.yaml](https://github.com/jkachmar/semantic-stack-yaml/workflows/Semantic%20stack.yaml/badge.svg)
+![Semantic stack.yaml](https://github.com/jkachmar/semantic-stack-yaml/workflows/stack.yaml%20validation/badge.svg)
 
 This is an unofficially supported `stack.yaml` configuration file for GitHub's [`semantic`] project.
 

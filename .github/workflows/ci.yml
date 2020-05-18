@@ -1,4 +1,4 @@
-name: 'Semantic stack.yaml'
+name: 'stack.yaml validation'
 
 # Run the workflow...
 on:
