@@ -1,6 +1,6 @@
 # (Unofficial) `stack.yaml` Configuration for [`semantic`]
 
-[<img alt="build status" src="https://img.shields.io/github/workflow/status/jkachmar/semantic-stack-yaml/stack.yaml%20validation/master?style=for-the-badge&label=stack.yaml%20validation" height="20">](https://github.com/jkachmar/semantic-stack-yaml/actions?query=workflow%3A%22stack.yaml+validation%22)
+[<img alt="build status" src="https://img.shields.io/github/workflow/status/jkachmar/semantic-stack-yaml/stack.yaml%20validation/master?style=for-the-badge&logo=github&label=stack.yaml%20validation" height="20">](https://github.com/jkachmar/semantic-stack-yaml/actions?query=workflow%3A%22stack.yaml+validation%22)
 
 This is an unofficially supported `stack.yaml` configuration file for GitHub's [`semantic`] project.
 
