@@ -11,6 +11,7 @@ packages:
   - semantic-json
   - semantic-parse
   - semantic-php
+  - semantic-proto
   - semantic-python
   - semantic-ruby
   - semantic-rust
